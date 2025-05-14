@@ -8,6 +8,10 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+
+        // Flowbite-Vue & core Flowbite
+        'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx}',
+        'node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
     ],
 
     theme: {
@@ -18,5 +22,9 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+            // This is the Tailwind plugin that powers Flowbite’s interactive components
+        require('flowbite/plugin'),
+    ],
 };

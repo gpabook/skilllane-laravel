@@ -1,3 +1,4 @@
+import 'flowbite';
 import '../css/app.css';
 import './bootstrap';
 
@@ -22,6 +23,8 @@ createInertiaApp({
             .mount(el);
     },
     progress: {
-        color: '#4B5563',
+        //color: '#4B5563',
+        color: '#33cbff',
+        showSpinner: true
     },
 });
