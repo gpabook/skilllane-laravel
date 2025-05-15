@@ -21,6 +21,7 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    /*==============
     public function definition(): array
     {
         return [
@@ -31,7 +32,22 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+    ===============*/
+    public function definition()
+    {
+        $created = $this->faker->dateTimeBetween('-1 year', 'now');
 
+        return [
+            'name'              => $this->faker->name(),
+            'email'             => $this->faker->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            // force the same password for every user:
+            'password'          => Hash::make('12345678'),
+            'remember_token'    => Str::random(10),
+            'created_at'        => $created,
+            'updated_at'        => $this->faker->dateTimeBetween($created, 'now'),
+        ];
+    }
     /**
      * Indicate that the model's email address should be unverified.
      */
