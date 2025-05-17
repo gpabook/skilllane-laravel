@@ -51,8 +51,17 @@ const showingNavigationDropdown = ref(false);
                                     Department
                                 </NavLink>
                             </div>
+                            <div
+                                class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
+                            >
+                                <NavLink
+                                    :href="route('avatar.create')"
+                                    :active="route().current('avatar.create')"
+                                >
+                                    Avatar
+                                </NavLink>
+                            </div>
                         </div>
-
                         <div class="hidden sm:ms-6 sm:flex sm:items-center">
                             <!-- Settings Dropdown -->
                             <div class="relative ms-3">
@@ -164,6 +173,7 @@ const showingNavigationDropdown = ref(false);
                         class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600"
                     >
                         <div class="px-4">
+
                             <div
                                 class="text-base font-medium text-gray-800 dark:text-gray-200"
                             >

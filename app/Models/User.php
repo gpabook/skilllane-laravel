@@ -26,6 +26,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -50,4 +51,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+        // Optionally, an accessor for full URL:
+            public function getAvatarUrlAttribute()
+            {
+                return $this->avatar
+                    ? asset('storage/'.$this->avatar)
+                    : asset('images/default-avatar.png');
+            }
 }
